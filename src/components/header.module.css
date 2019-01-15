@@ -1,0 +1,94 @@
+.header nav ul li {
+  display: inline-block;
+  line-height: 1.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: 400;
+  font-style: normal;
+  list-style-type: none;
+}
+
+.header nav ul li a {
+  color: #1c1c1c;
+}
+
+.header nav ul li a:hover {
+  color: rgba(28,28,28,.5);
+}
+
+.mainNavigation {
+  display: block;
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.mainNavigation ul {
+  margin: 1em auto 30px;
+  text-align: center;
+  padding: 0;
+}
+
+.mainNavigation ul li {
+  padding: 1em 1em 0;
+  margin: 0;
+}
+
+/**
+  * Mobile
+  */
+.mobileNavigation {
+  display: none;
+  width: 100%;
+  padding: 1em 0;
+  text-align: center;
+}
+
+.mobileNavButton {
+  color: #1c1c1c;
+  background: #fff;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: 400;
+  font-style: normal;
+  user-select: none;
+}
+
+.mobileNavigation ul {
+  margin: 1.25em 0 0;
+  background-color: rgba(204, 204, 204, 0.2);
+}
+
+.mobileNavigation ul li {
+  width: 100%;
+  margin: 0 0 1.25em 0;
+}
+
+.mobileNavigation ul li:first-child {
+  margin-top: 1.25em;
+}
+
+.activeLi {
+  font-weight: bold;
+}
+
+/**
+  * Mobile/desktop
+  */
+@media only screen and (max-width: 640px) {
+  .mainNavigation {
+    display: none;
+  }
+
+  .mobileNavigation {
+    display: block;
+  }
+}

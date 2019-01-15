@@ -1,0 +1,137 @@
+/* Button container */
+.wrapper {
+	position: relative;
+	display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  transform: scale(.75);
+}
+
+/* Button style */
+.wrapper button {
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	width: 250px;
+	height: 70px;
+	border: 2px solid rgba(28,28,28,.95);
+	border-radius: 40px;
+	background: transparent;
+	color: rgba(28,28,28,.95);
+	letter-spacing: 1px;
+	font-size: 18px;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+	transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+}
+
+.wrapper button:hover {
+	background-color: rgba(28,28,28,.95);
+	color: #fff;
+}
+
+.wrapper button:focus {
+	outline: none;
+}
+
+/* Text (transition for when returning to initial state) */
+.wrapper button span {
+	-webkit-transition: opacity 0.3s 0.1s;
+	transition: opacity 0.3s 0.1s;
+}
+
+/* Common style of SVGs */
+.wrapper svg {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	pointer-events: none;
+}
+
+.wrapper svg path {
+	opacity: 0;
+	fill: none;
+}
+
+.wrapper svg.progressCircle path {
+	stroke: #1ECD97;
+	stroke-width: 5;
+}
+
+.error.wrapper svg.progressCircle path {
+	stroke: #FB797E;
+	stroke-width: 5;
+}
+
+.wrapper svg.checkmark path,
+.wrapper svg.cross path {
+	stroke: #fff;
+	stroke-linecap: round;
+	stroke-width: 4;
+	-webkit-transition: opacity 0.1s;
+	transition: opacity 0.1s;
+}
+
+/* Loading, success and error effects */
+.loading.wrapper button {
+	width: 70px; /* make a circle */
+	border-width: 5px;
+	border-color: #ddd;
+	background-color: transparent;
+	color: #fff;
+}
+
+.loading.wrapper span {
+	-webkit-transition: opacity 0.15s;
+	transition: opacity 0.15s;
+}
+
+.loading.wrapper span,
+.success.wrapper span,
+.error.wrapper span {
+	opacity: 0; /* keep it hidden in all states */
+}
+
+.success.wrapper button,
+.error.wrapper button {
+	-webkit-transition: background-color 0.3s, width 0.3s, border-width 0.3s;
+	transition: background-color 0.3s, width 0.3s, border-width 0.3s;
+}
+
+.success.wrapper button {
+	border-color: #1ECD97;
+	background-color: #1ECD97;
+}
+
+.error.wrapper button {
+	border-color: #FB797E;
+	background-color: #FB797E;
+}
+
+.loading.wrapper svg.progressCircle path {
+	opacity: 1;
+	-webkit-transition: stroke-dashoffset 2s;
+	transition: stroke-dashoffset 2s;
+}
+
+.success.wrapper svg.checkmark path,
+.error.wrapper svg.cross path {
+	opacity: 1;
+	-webkit-transition: stroke-dashoffset 0.5s;
+	transition: stroke-dashoffset 0.5s;
+}
+
+/* Optional elastic effect for the width of the button */
+.elastic.wrapper button {
+	-webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1), border-width 0.3s, border-color 0.3s;
+	-webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1.6), border-width 0.3s, border-color 0.3s;
+	transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1.6), border-width 0.3s, border-color 0.3s;
+}
+
+.loading.elastic.wrapper button {
+	-webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, 0, 0.75, 0.75), border-width 0.3s, border-color 0.3s;
+	-webkit-transition: background-color 0.3s, color 0.3s, width 0.3s c
+}

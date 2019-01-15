@@ -1,0 +1,18 @@
+.wrapper {
+  padding: 30px 50px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+@media only screen and (max-width: 640px) {
+  .wrapper {
+    padding: 25px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .wrapper {
+    max-width: 640px;
+  }
+}
