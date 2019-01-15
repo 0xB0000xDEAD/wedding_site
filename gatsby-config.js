@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  pathPrefix: '/gatsby-engaged',
+  pathPrefix: '/wedding_site',
   siteMetadata: {
     // title: 'Brett & Internet',
     title: 'Sergio & Daniela',
