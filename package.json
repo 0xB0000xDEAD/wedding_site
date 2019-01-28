@@ -28,8 +28,8 @@
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "predeploy": "gatsby build --prefix-paths",
-    "deploy": "npm run predeploy && gh-pages -d public"
+    "predeploy": "gatsby build",
+    "deploy": " NODE_DEBUG=gh-pages npm run predeploy && gh-pages -d public"
   },
   "devDependencies": {
     "gatsby-plugin-root-import": "^2.0.4",

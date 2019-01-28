@@ -3,7 +3,6 @@ const path = require('path')
 module.exports = {
   pathPrefix: '/wedding_site',
   siteMetadata: {
-    // title: 'Brett & Internet',
     title: 'Sergio & Daniela',
     
     subTitle: 'are getting married',
