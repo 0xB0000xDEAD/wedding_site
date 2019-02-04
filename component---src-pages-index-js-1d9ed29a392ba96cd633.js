@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{129:function(e,t,n){"use strict";n.r(t);var a=n(0),l=n.n(a),r=n(149),c=n(148),o=n(150),u=["gatsby","wedding","theme","template","engaged"];t.default=function(){return l.a.createElement(r.a,null,l.a.createElement(c.a,{title:"Home",keywords:u}),l.a.createElement(o.a,null))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-1d9ed29a392ba96cd633.js.map
