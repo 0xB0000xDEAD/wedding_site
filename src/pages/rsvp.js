@@ -34,6 +34,7 @@ class RsvpPage extends React.Component {
       isFormError: false,
       formError: undefined,
       rsvpValue: true,
+      veggieValue: false,
       countValue: 0,
     }
   }
@@ -100,18 +101,18 @@ class RsvpPage extends React.Component {
             <Input label="First" type="text" name="first_name" required />
             <Input label="Last" type="text" name="last_name" required />
             <Input label="Email Address" type="email" name="email" />
-            <Input
+            {/* <Input
               label="Street Address"
               type="text"
               name="street_1"
               required
-            />
+            /> */}
             {/* <Input
               label="Street Address 2"
               type="text"
               name="street_2"
             /> */}
-            <div style={{ display: 'flex' }}>
+            {/* <div style={{ display: 'flex' }}>
               <Input
                 label="City"
                 type="text"
@@ -133,13 +134,13 @@ class RsvpPage extends React.Component {
                 required
                 style={{ marginLeft: '8px', width: '100%' }}
               />
-            </div>
+            </div> */}
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Checkbox
                 label="I'm coming"
                 name="rsvp"
                 style={{ width: '15em', marginTop: '25.6px' }}
-                onChange={this._handleChangeCheckbox}
+                onChange={this._handleRsvpCheckbox}
                 checked={this.state.rsvpValue}
                 value={this.state.rsvpValue ? 'yes' : 'no'}
               />
@@ -159,11 +160,11 @@ class RsvpPage extends React.Component {
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Checkbox
                 label="I'm a vegetarian."
-                name="rsvp"
+                name="veggie"
                 style={{ width: '15em', marginTop: '25.6px' }}
-                onChange={this._handleChangeCheckbox}
-                checked={this.state.rsvpValue}
-                value={this.state.rsvpValue ? 'yes' : 'no'}
+                onChange={this._handleVeggieCheckbox}
+                checked={this.state.veggieValue}
+                value={this.state.veggieValue ? 'yes' : 'no'}
               />
               {/* <Input
                 // label="In my party (excluding me)"
@@ -191,12 +192,20 @@ class RsvpPage extends React.Component {
     )
   }
 
-  _handleChangeCheckbox = ev => {
+  _handleRsvpCheckbox = ev => {
     const rsvpValue = !this.state.rsvpValue
     this.setState({ rsvpValue })
     if (!rsvpValue) {
       this.setState({ countValue: 0 })
     }
+  }
+  _handleVeggieCheckbox = ev => {
+    const veggieValue = !this.state.veggieValue
+    this.setState({ veggieValue })
+
+    // if (!veggieValue) {
+    //   this.setState({ countValue: 0 })
+    // }
   }
 
   _handleChangeCount = ev => {
