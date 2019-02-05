@@ -16,13 +16,17 @@ const pageLinks = [
     name: 'rsvp',
     to: '/rsvp',
   },
+  // {
+  //   name: 'Memento',
+  //   to: '/photos/',
+  // },
   {
-    name: 'Memento',
-    to: '/photos/',
+    name: 'tourist info',
+    to: '/tourist',
   },
   {
-    name: 'turist info',
-    to: '/turist',
+    name: 'Accomodation',
+    to: '/accomodation',
   },
 ]
 
