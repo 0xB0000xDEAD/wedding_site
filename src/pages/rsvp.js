@@ -10,6 +10,7 @@ import { request, serialize } from 'utils'
 import AjaxButton from 'components/ajaxButton'
 import Checkbox from 'components/checkbox'
 import H1 from 'components/h1'
+import { FormattedMessage } from 'react-intl'
 
 //original... in case you want to take a look at the original app script
 // const GOOGLE_SHEETS_DB = 'https://script.google.com/macros/s/AKfycbxQgr4Z8YUiGbYwkSBTzC1ZC548Hmkl6jkRUfS9SdHGuYCYYrko/exec'
@@ -97,10 +98,25 @@ class RsvpPage extends React.Component {
         <SiteTitle />
         <Content>
           <Form name="rsvp" onSubmit={this._handleSubmit}>
-            <H1>Please RSVP by April 1, 2019.</H1>
-            <Input label="First" type="text" name="first_name" required />
-            <Input label="Last" type="text" name="last_name" required />
-            <Input label="Email Address" type="email" name="email" />
+            <H1>
+              <FormattedMessage id="rsvp" />
+            </H1>
+            <Input
+              label={<FormattedMessage id="form_first_name" />}
+              type="text"
+              name="first_name"
+              required
+            />
+            <Input
+              label={<FormattedMessage id="form_last_name" />}
+              name="last_name"
+              required
+            />
+            <Input
+              label={<FormattedMessage id="form_email" />}
+              type="email"
+              name="email"
+            />
             {/* <Input
               label="Street Address"
               type="text"
@@ -137,7 +153,7 @@ class RsvpPage extends React.Component {
             </div> */}
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Checkbox
-                label="I'm coming"
+                label={<FormattedMessage id="form_coming" />}
                 name="rsvp"
                 style={{ width: '15em', marginTop: '25.6px' }}
                 onChange={this._handleRsvpCheckbox}
@@ -145,8 +161,7 @@ class RsvpPage extends React.Component {
                 value={this.state.rsvpValue ? 'yes' : 'no'}
               />
               <Input
-                // label="In my party (excluding me)"
-                label="People coming with me"
+                label={<FormattedMessage id="form_coming_with" />}
                 type="number"
                 name="count"
                 style={{ width: '100%' }}
@@ -159,7 +174,7 @@ class RsvpPage extends React.Component {
             </div>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Checkbox
-                label="I'm a vegetarian."
+                label={<FormattedMessage id="form_veggie" />}
                 name="veggie"
                 style={{ width: '15em', marginTop: '25.6px' }}
                 onChange={this._handleVeggieCheckbox}
@@ -180,7 +195,11 @@ class RsvpPage extends React.Component {
                 max={10}
               /> */}
             </div>
-            <Input label="Note" name="note" multiline />
+            <Input
+              label={<FormattedMessage id="form_note" />}
+              name="note"
+              multiline
+            />
             <AjaxButton
               isLoading={isLoading}
               isSuccess={isFormSuccess}

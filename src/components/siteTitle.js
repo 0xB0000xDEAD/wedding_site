@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 import styles from './siteTitle.module.css'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { FormattedMessage } from 'react-intl'
 
-//webpack import 
+//webpack import
 import Flora from '../images/flora800.png'
 
 const SiteTitle = () => (
@@ -35,7 +36,12 @@ const SiteTitle = () => (
           <h1>
             <Link to="/">{title}</Link>
           </h1>
-          {description && <p className={styles.description}>{description}</p>}
+          {/* {description && <p className={styles.description}>{description}</p>} */}
+          {description && (
+            <p className={styles.description}>
+              <FormattedMessage id="description" />
+            </p>
+          )}
 
           {/* <img src={Flora} /> */}
           <Img fluid={data.flora.childImageSharp.fluid} />
